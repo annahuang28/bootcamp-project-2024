@@ -317,3 +317,34 @@
 .blog-post a:active{
     color: var(--cg-darkgrey); 
 }
+
+#rotate {
+  transform: rotate(90deg); /* Change the degree to rotate as needed */
+  transition: transform 0.5s;
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 50px -35px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.rotate_blog {
+  transform: rotate(90deg); /* Change the degree to rotate as needed */
+  transition: transform 0.5s;
+}
+
+#blog-container {
+  display: flex;              
+  flex-wrap: wrap;          
+  justify-content: space-around; 
+}
+
+.blog-post {
+  width: calc(50% - 20px);   
+  margin: 0 -30px;           
+  box-sizing: border-box;      
+}
