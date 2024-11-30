@@ -9,11 +9,6 @@ import style from './blogs.module.css';
 export default function BlogPostPage() {
   const { slug } = useParams();  // Get the dynamic slug from the URL
 
-  // If slug is not available yet (e.g., during server-side rendering), return loading state
-  if (!slug) {
-    return <p>Loading...</p>;
-  }
-
   // Find the blog post based on the slug
   const blog = blogs.find((b) => b.slug === slug);
 
@@ -24,9 +19,9 @@ export default function BlogPostPage() {
 
   return (
     <div>
-        <main>
-          <h1 className="page-title">{blog.title}</h1>
-          <p><strong>Date: </strong>{blog.date}</p>
+        <h1 className="page-title">{blog.title}</h1>
+        <main className= {style.mainContent}>
+          <p><strong>Date: </strong>{blog.full_date}</p>
           <div className={style.imageContainer}>
             <Image src={blog.image1} alt={blog.imageAlt} width={500} height={300} className={style.image} />
             <Image src={blog.image2} alt={blog.imageAlt} width={500} height={300} className={style.image} />

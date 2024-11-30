@@ -1,6 +1,7 @@
 export type Blog = {
   title: string;
   date: string;
+  full_date: string;
   description: string;
   image: string;
   image1: string;
@@ -15,6 +16,7 @@ const blogs: Blog[] = [
   {
     title: "2024 Travel: Japan",
     date: "09/2024",
+    full_date: "September 2024",
     description: "Visit Japan!",
     image: "/japan.png", 
     image1: "/japan2.png",
@@ -27,11 +29,12 @@ const blogs: Blog[] = [
   {
     title: "2024 Travel: Lake Tahoe",
     date: "01/2024",
+    full_date: "January 2024",
     description: "Visit Lake Tahoe!",
     image: "/tahoe.png",  
-    image1: "/tahoe.png",
+    image1: "/tahoe2.png",
     image2: "/tahoe.png",
-    image3: "/tahoe.png",
+    image3: "/tahoe3.png",
     imageAlt: "Lake Tahoe",
     slug: "travel_tahoe",
     content: "I traveled to Tahoe after New York for a snow trip with friends.",
@@ -39,6 +42,7 @@ const blogs: Blog[] = [
   {
     title: "2023/24 Travel: New York City",
     date: "12/2023-01/2024",
+    full_date: "December 2023/January 2024",
     description: "Visit New York City!",
     image: "/nyc2.png", 
     image1: "/nyc2.png",
@@ -51,6 +55,7 @@ const blogs: Blog[] = [
   {
     title: "2023 Travel: Las Vegas",
     date: "08/2023",
+    full_date: "August 2023",
     description: "Visit Las Vegas!",
     image: "/vegas3.png",
     image1: "/vegas2.png",

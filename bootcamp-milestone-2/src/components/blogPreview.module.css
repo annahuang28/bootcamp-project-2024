@@ -1,4 +1,3 @@
-/* Container for individual blog previews */
 .blogPreview {
     width: 50%; 
     max-width: 900px; 
@@ -15,7 +14,6 @@
     font-family: monospace;
 }
 
-/* Container for text elements (title, date, excerpt, link) stacked vertically */
 .textContainer {
     display: flex;
     flex-direction: column; 
@@ -23,7 +21,6 @@
     width: 60%;
 }
 
-/* Container for images */
 .imageContainer {
     display: flex;
     flex-direction: column; 
@@ -32,7 +29,6 @@
     height: 100%; 
 }
 
-/* Styling for the images */
 .blogImage {
     width: 100%; 
     height: auto; 
@@ -40,7 +36,6 @@
     object-fit: cover; 
 }
 
-/* Title of the blog post */
 .blogTitle {
     font-size: 1.5rem; 
     font-weight: 600;
@@ -49,7 +44,6 @@
     text-align: left; 
 }
 
-/* Date styling */
 .blogDate {
     font-size: 1rem;
     color: #888;
@@ -57,7 +51,6 @@
     text-align: left; 
 }
 
-/* Short description of the blog post */
 .blogExcerpt {
     font-size: 1rem; 
     color: #555;
@@ -65,7 +58,6 @@
     text-align: left; 
 }
 
-/* Link to the full blog post */
 .blogLink {
     color: #333;
     text-decoration: none;

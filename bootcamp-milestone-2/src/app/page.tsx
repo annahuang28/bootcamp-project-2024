@@ -1,6 +1,6 @@
 // Home.tsx
 import React from 'react';
-import style from './home.module.css'; // Import styles using CSS modules
+import style from './home.module.css'; 
 
 const Home: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Home: React.FC = () => {
             <img
               src="profile_pic.png"
               alt="Profile Picture"
-              className="profile-pic" // This will still work as a regular class if needed
+              className="profile-pic"
             />
           </div>
           <div className={style['about-text']}>

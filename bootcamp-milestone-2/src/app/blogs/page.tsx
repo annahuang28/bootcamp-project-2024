@@ -1,5 +1,5 @@
 import BlogPreview from '@/components/blogPreview'; // Import BlogPreview component
-import blogs from '@/app/blogData'; // Import the blog data
+import blogs from '@/app/blogData';
 
 export default function BlogsPage() {
   return (
