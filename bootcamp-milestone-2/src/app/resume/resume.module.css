@@ -1,0 +1,86 @@
+.resume {
+    font-family: monospace;
+    margin-left: 15%;
+    margin-right: 150px;
+    width: 70%;  /* You can adjust this based on the layout */
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+    text-align: left; /* Ensure text is left-aligned within the container */
+  }
+  /* Button styles */
+  .button {
+    background-color: var(--cg-grey);
+    border: none;
+    color: var(--cg-white);
+    font-family: monospace;
+    padding: 3px 5px;
+    font-size: 12px; /* Smaller font size */
+    text-align: center;
+    border-radius: 3px; /* Less rounded corners */
+    display: block;
+    margin: 10px auto;
+    text-decoration: underline;
+    width: 125px;
+  }
+  
+  .button:hover {
+    background-color: var(--cg-darkgrey);
+  }
+  
+  /* General Section Styles */
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .entry {
+    margin-top: -15px;
+    margin-bottom: 20px;
+  }
+  
+  .entry-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .entry-info {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .entry-description {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  
+  .entry-bullets {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1rem;
+  }
+  
+  /* Additional styles for smaller spacing in the entries */
+  .entry-info,
+  .entry-description,
+  .entry-bullets {
+    margin-top: -5px;
+    font-size: 14px; /* Smaller font size */
+  }
+  
+  /* Adjust margins for better layout */
+  .entry-title {
+    margin-top: 20px;
+  }
+  
+  .sub-info{
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .spacing{
+    margin-bottom: 15px;
+  }

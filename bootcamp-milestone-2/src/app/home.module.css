@@ -1,0 +1,31 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 15px;
+}
+
+.about-image img {
+  max-width: 300px;
+  border-radius: 3px;
+}
+
+.about-text {
+  flex: 1;
+  margin-left: 20px;
+  font-family: monospace;
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}

@@ -1,0 +1,35 @@
+.blog-post a,
+.return {
+    color: var(--cg-darkergrey); 
+    font-weight: bold; 
+    text-decoration: none; 
+}
+
+.blog-post a:hover,
+.return {
+    color: var(--cg-grey); 
+    text-decoration: underline; 
+}
+
+.blog-post a:active{
+    color: var(--cg-darkgrey); 
+}
+
+#rotate {
+  transform: rotate(90deg); /* Change the degree to rotate as needed */
+  transition: transform 0.5s;
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 50px -35px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.rotate_blog {
+  transform: rotate(90deg); /* Change the degree to rotate as needed */
+  transition: transform 0.5s;
+}

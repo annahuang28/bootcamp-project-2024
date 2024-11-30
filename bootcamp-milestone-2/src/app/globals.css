@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* variables */
+    --cg-black: rgb(30, 32, 32);
+    --cg-darkgrey: rgb(165, 165, 165);
+    --cg-grey: rgb(140, 140, 140);
+    --cg-lightgrey: rgb(243, 243, 243);
+    --cg-white: rgb(255, 255, 255);
+    --cg-darkergrey: rgb(65, 65, 65);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: var(--cg-lightgrey);
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+.main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+.page-title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cg-black);
+    color: var(--cg-white);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}

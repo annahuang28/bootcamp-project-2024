@@ -1,0 +1,80 @@
+/* Container for individual blog previews */
+.blogPreview {
+    width: 50%; 
+    max-width: 900px; 
+    margin: 0 auto 30px; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start; 
+    padding: 30px; 
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 30px; 
+    font-family: monospace;
+}
+
+/* Container for text elements (title, date, excerpt, link) stacked vertically */
+.textContainer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    width: 60%;
+}
+
+/* Container for images */
+.imageContainer {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    width: 50%; 
+    height: 100%; 
+}
+
+/* Styling for the images */
+.blogImage {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+    object-fit: cover; 
+}
+
+/* Title of the blog post */
+.blogTitle {
+    font-size: 1.5rem; 
+    font-weight: 600;
+    color: #333;
+    margin: 0px 0 10px 0;
+    text-align: left; 
+}
+
+/* Date styling */
+.blogDate {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+/* Short description of the blog post */
+.blogExcerpt {
+    font-size: 1rem; 
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+/* Link to the full blog post */
+.blogLink {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem; 
+    transition: color 0.3s ease;
+    text-align: left; 
+}
+
+.blogLink:hover {
+    color: #888;
+}
