@@ -2,7 +2,7 @@ import React from 'react';
 import style from './blogPreview.module.css';
 import Link from 'next/link'; 
 import Image from 'next/image'; 
-import { Blog } from '@/app/blogData'; 
+import { Blog } from '../database/blogSchema'; 
 
 export default function BlogPreview({ title, date, description, image, imageAlt, slug }: Blog) {
   return (
