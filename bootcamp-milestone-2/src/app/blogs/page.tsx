@@ -8,7 +8,7 @@ async function getBlogs() {
 
   try {
     // query for all blogs and sort by date
-    const blogs = await BlogModel.find().orFail();
+    const blogs = await BlogModel.find().sort({ full_date: -1 }).orFail();
     // send a response as the blogs as the message
     return blogs;
   } catch (err) {
