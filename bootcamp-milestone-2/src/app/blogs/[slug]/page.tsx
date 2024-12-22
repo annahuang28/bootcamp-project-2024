@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image'; 
 import style from './blogs.module.css';
 import { Blog } from "@/database/blogSchema";
+import Comment from "@/components/comment";
+import { IComment } from "@/database/blogSchema";
 
 type Props = {
   params: { slug: string }
@@ -25,8 +27,7 @@ async function getBlog(slug: string) {
 }
 
 // Ensure the component is async to handle server-side rendering
-export default async function BlogPostPage({ params: { slug } }: Props) {
-
+export default async function BlogPostPage({ params: {slug} }: Props) {
   // Fetch blog post data based on the slug
   const blog: Blog = await getBlog(slug);
 
@@ -46,18 +47,24 @@ export default async function BlogPostPage({ params: { slug } }: Props) {
       <h1 className="page-title">{blog.title}</h1>
       <main className={style.mainContent}>
         <p><strong>Date: </strong>{blog.full_date}</p>
-        
-        <div className={style.imageContainer}>
-          {/* Dynamically render images based on availability */}
-          {blog.image1 && <Image src={blog.image1} alt={blog.imageAlt || 'Image 1'} width={500} height={300} className={style.image} />}
-          {blog.image2 && <Image src={blog.image2} alt={blog.imageAlt || 'Image 2'} width={500} height={300} className={style.image} />}
-          {blog.image3 && <Image src={blog.image3} alt={blog.imageAlt || 'Image 3'} width={500} height={300} className={style.image} />}
-        </div>
+          <div className={style.imageContainer}>
+            {/* Dynamically render images based on availability */}
+            {blog.image1 && <Image src={blog.image1} alt={blog.imageAlt || 'Image 1'} width={500} height={300} className={style.image} />}
+            {blog.image2 && <Image src={blog.image2} alt={blog.imageAlt || 'Image 2'} width={500} height={300} className={style.image} />}
+            {blog.image3 && <Image src={blog.image3} alt={blog.imageAlt || 'Image 3'} width={500} height={300} className={style.image} />}
+          </div>
 
-        <div className={style.contentContainer}>
-          <p>{blog.content}</p>
-        </div>
-        
+          <div className={style.contentContainer}>
+            <p>{blog.content}</p>
+            {/* Comments section */}
+            <div className={style.blogComments}>
+              <h2 className={style.comments}>Comment Section</h2>
+              {blog.comments?.length > 0 ? (
+                blog.comments.map((comment: IComment, idx: number) => (
+                <Comment key={idx} comment={comment} />
+              ))) : (<p>No comments yet.</p> )}
+            </div>
+          </div>
         <Link href="/blogs" className={style.return}>Return to other blogs</Link>
       </main>
     </div>

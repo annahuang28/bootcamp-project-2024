@@ -12,7 +12,20 @@ export type Blog = {
     imageAlt: string;
     slug: string; // slug is a URL-friendly name used to redirect to a specific page
     content: string;
+    comments: IComment[];
   };
+
+export type IComment = {
+    user: string;
+    comment: string;
+    time: Date;
+}
+
+const commentSchema = new Schema<IComment>({
+    user: {type: String, required: true},
+    comment: {type: String, required: true},
+    time: { type: Date, required: true, default: new Date()}
+})
 
 // mongoose schema
 const blogSchema = new Schema<Blog>({
