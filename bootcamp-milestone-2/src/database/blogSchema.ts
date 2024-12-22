@@ -24,7 +24,7 @@ export type IComment = {
 const commentSchema = new Schema<IComment>({
     user: {type: String, required: true},
     comment: {type: String, required: true},
-    time: { type: Date, required: true, default: new Date()}
+    time: { type: Date, required: true, default: () => new Date()}
 })
 
 // mongoose schema

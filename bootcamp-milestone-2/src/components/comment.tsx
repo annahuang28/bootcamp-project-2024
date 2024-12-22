@@ -8,12 +8,9 @@ type CommentProps = {
     comment: IComment;
 }
 
-/* Modularizing code into seperate functions is useful.
-		Makes your code look nicer and allows for better readability.
-	*/
-    function parseCommentTime(time: Date){
-        return new Date(time).toDateString();
-    }
+function parseCommentTime(time: Date){
+    return new Date(time).toDateString();
+}
 
 export default function Comment({ comment }: CommentProps) {
     return (

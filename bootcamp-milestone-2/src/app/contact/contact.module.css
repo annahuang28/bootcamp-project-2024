@@ -1,47 +1,53 @@
 .form {
-    width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  }
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: monospace;
+}
   
-  .label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: monospace;
-    font-weight: bold;
-  }
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: monospace;
+  font-weight: bold;
+}
   
-  .input,
-  .textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+}
   
-  .textarea {
-    resize: vertical;
-    min-height: 100px;  /* Ensures that the textarea is resizable vertically */
-  }
+.textarea {
+  resize: vertical;
+  min-height: 100px;  /* Ensures that the textarea is resizable vertically */
+}
   
-  .submitButton {
-    margin-top: 15px;
-    background-color: var(--cg-grey);
-    color: white;
-    font-family: monospace;
-    border: none;
-    border-radius: 2px;
-    width: 65px;
-    height: 30px;
-    cursor: pointer;
-  }
+.submitButton {
+  margin-top: 10px;
+  background-color: var(--cg-grey);
+  color: white;
+  font-family: monospace;
+  border: none;
+  border-radius: 2px;
+  width: 65px;
+  height: 30px;
+  cursor: pointer;
+}
   
-  .submitButton:hover {
-    background-color: var(--cg-darkgrey);
-  }
-  
+.submitButton:hover {
+  background-color: var(--cg-darkgrey);
+}
+
+.statusMessage {
+  text-align: center;
+  margin-top: 15px;
+  color: var(--cg-grey);
+}
