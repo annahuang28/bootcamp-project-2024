@@ -8,7 +8,7 @@ export default function Navbar() {
       <h1> Personal Website </h1>
       <nav>
         <Link href="/" >Home</Link>
-        <Link href="/blogs">Blogs</Link>
+        <Link href="/Blogs">Blogs</Link>
         <Link href="/portfolio">Portfolio</Link>
         <Link href="/resume" >Resume</Link>
         <Link href="/contact" >Contact Me</Link>
