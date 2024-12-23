@@ -1,0 +1,46 @@
+/* Form Container */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.field, .comment {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Style for the comment field */
+.comment {
+    min-height: 50px;
+    resize: vertical;
+}
+
+/* Placeholder Styling */
+    .field::placeholder, .comment::placeholder {
+    color: #888;
+}
+
+/* Submit Button */
+.button {
+    margin-top: 10px;
+    background-color: var(--cg-grey);
+    color: white;
+    font-family: monospace;
+    border: none;
+    border-radius: 2px;
+    width: 50px;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+    
+.button:hover {
+    background-color: var(--cg-darkgrey);
+}

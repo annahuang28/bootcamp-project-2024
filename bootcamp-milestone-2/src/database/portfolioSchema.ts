@@ -18,7 +18,6 @@ const portfolioSchema = new Schema<Portfolio>({
 })
 
 // defining the collection and model
-const Portfolio = mongoose.models['portfolios'] || 
-    mongoose.model('portfolios', portfolioSchema);
+const Portfolio = mongoose.models['portfolios'] || mongoose.model('portfolios', portfolioSchema);
 
 export default Portfolio;
