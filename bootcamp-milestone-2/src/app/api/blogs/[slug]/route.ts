@@ -3,10 +3,10 @@ import connectDB from '@/database/db';
 import blogSchema from '@/database/blogSchema';
 
 // The correct function signature for Next.js route handlers
-export async function GET(req: NextRequest, { params }: { params: { slug: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
   await connectDB(); // Connect to the database before querying
 
-  const { slug } = params; // Destructure slug from params
+  const slug = (await params).slug;
 
   try {
     // Try to find the blog post by slug
