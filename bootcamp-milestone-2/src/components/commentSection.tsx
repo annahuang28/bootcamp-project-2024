@@ -58,7 +58,7 @@ export default function CommentSection({ collection, slug }: Props) {
 
     try {
       // Adjust the URL based on collection type and presence of slug
-      let url = `/api/portfoliocomments/comment`;  // Default URL for portfolio
+      let url = `/api/${collection}/comment`;  // Default URL for portfolio
 
       if (slug) {
         url = `/api/${collection}/${slug}/comment`;  // URL for individual blog post
