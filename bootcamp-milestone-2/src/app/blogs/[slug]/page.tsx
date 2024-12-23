@@ -9,8 +9,9 @@ type Props = {
 };
 
 async function getBlog(slug: string) {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || `http://localhost:3000`;
   try {
-    const res = await fetch(`http://localhost:3000/api/blogs/${slug}`, {
+    const res = await fetch(`${apiUrl}/api/blogs/${slug}`, {
       cache: "no-store",  // Disable cache for fresh data
     });
 
