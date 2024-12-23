@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connectDB from "@/database/db";
-import { IComment } from "@/database/comment";  // Assuming IComment interface is set up correctly
 import PortfolioComment from '@/database/portfolioCommentSchema';
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   await connectDB(); // Ensure DB connection
 
   try {

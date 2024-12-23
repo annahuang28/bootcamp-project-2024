@@ -48,6 +48,7 @@ const Contact = () => {
       )
       .then(
         (response) => {
+          console.log(response);
           setStatus({
             success: true,
             error: false,
@@ -60,6 +61,7 @@ const Contact = () => {
           });
         },
         (error) => {
+          console.error(error);
           setStatus({
             success: false,
             error: true,
@@ -80,6 +82,7 @@ const Contact = () => {
           type="text"
           id="name"
           name="name"
+          placeholder="Enter here"
           required
           value={formData.name}
           onChange={handleChange}
@@ -93,6 +96,7 @@ const Contact = () => {
           type="email"
           id="email"
           name="email"
+          placeholder="Enter here"
           required
           value={formData.email}
           onChange={handleChange}
@@ -105,7 +109,7 @@ const Contact = () => {
         <textarea
           id="message"
           name="message"
-          placeholder="Enter your message here:"
+          placeholder="Enter your message here"
           required
           value={formData.message}
           onChange={handleChange}

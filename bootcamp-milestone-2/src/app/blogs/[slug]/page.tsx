@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div>
-      <h1 className="page-title">{blog.title}</h1>
+      <h1 className="page-title">{blog.title.replace("'", "&apos;")}</h1>
       <main className={style.mainContent}>
         <p><strong>Date: </strong>{blog.full_date}</p>
           <div className={style.imageContainer}>

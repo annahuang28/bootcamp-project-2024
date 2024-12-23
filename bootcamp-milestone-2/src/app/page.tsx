@@ -1,6 +1,6 @@
-// Home.tsx
 import React from 'react';
 import style from './home.module.css'; 
+import Image from 'next/image'; 
 
 const Home: React.FC = () => {
   return (
@@ -9,10 +9,12 @@ const Home: React.FC = () => {
         <h1 className="page-title">Welcome</h1>
         <div className={style.about}>
           <div className={style['about-image']}>
-            <img
-              src="profile_pic.png"
+            <Image
+              src="/profile_pic.png"
               alt="Profile Picture"
               className="profile-pic"
+              width={500}
+              height={300}
             />
           </div>
           <div className={style['about-text']}>

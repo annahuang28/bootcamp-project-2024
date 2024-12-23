@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import connectDB from "@/database/db";
 import Portfolio from "@/database/portfolioSchema";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
         await connectDB(); // Ensure database connection
         const portfolios = await Portfolio.find().sort({ date: -1 }); // Sorting by date (or adjust as needed)

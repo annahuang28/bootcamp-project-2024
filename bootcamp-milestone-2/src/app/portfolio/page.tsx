@@ -53,7 +53,7 @@ export default async function PortfolioPage() {
         ))}
         <div className={style.portfolioComments}>
               <h2 className={style.comments}>Comment Section</h2>
-          <CommentSection collection="portfoliocomments" />
+          <CommentSection collection= "portfoliocomments" />
         </div>
       </div>
     </div>

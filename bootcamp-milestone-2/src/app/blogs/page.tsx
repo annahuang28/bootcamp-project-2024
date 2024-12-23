@@ -12,13 +12,13 @@ async function getBlogs() {
     // send a response as the blogs as the message
     return blogs;
   } catch (err) {
+    console.error('Error fetching blogs:', err);
     return null;
   }
 }
 
 export default async function BlogsPage() {
   const blogs = await getBlogs();  // Fetch the blogs using the getBlogs function
-  // console.log(blogs); 
 
   if (!blogs) {
     return <div>No blogs found</div>;  // Handle the case where no blogs are found

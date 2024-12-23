@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header className={style.navbar} >
-      <h1> Personal Website </h1>
+      <Link  className={style.personalWebsite}href="/" >Personal Website</Link>
       <nav>
         <Link href="/" >Home</Link>
         <Link href="/blogs">Blogs</Link>
