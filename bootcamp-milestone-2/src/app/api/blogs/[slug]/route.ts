@@ -1,17 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import connectDB from "@/database/db";
-import blogSchema from "@/database/blogSchema";
+import connectDB from '@/database/db';
+import blogSchema from '@/database/blogSchema';
 
-type IParams = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function GET(req: NextRequest, { params }: IParams) {
+// The correct function signature for Next.js route handlers
+export async function GET(req: NextRequest, { params }: { params: { slug: string } }) {
   await connectDB(); // Connect to the database before querying
 
-  const { slug } = await params; // Destructure slug from params
+  const { slug } = params; // Destructure slug from params
 
   try {
     // Try to find the blog post by slug
@@ -26,7 +21,7 @@ export async function GET(req: NextRequest, { params }: IParams) {
     return NextResponse.json(blog);
   } catch (err) {
     // Catch any other errors (such as DB connection issues)
-    console.error("Error fetching blog:", err);
+    console.error('Error fetching blog:', err);
     return NextResponse.json('Error fetching blog.', { status: 500 });
   }
 }
