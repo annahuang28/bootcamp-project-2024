@@ -1,5 +1,5 @@
 import BlogPreview from '@/components/blogPreview'; // Import BlogPreview component
-import BlogModel,{ Blog } from '@/database/blogSchema';
+import Blog from '@/database/blogSchema';
 import connectDB from '@/database/db';
 import React from "react";
 
@@ -8,7 +8,7 @@ async function getBlogs() {
 
   try {
     // query for all blogs and sort by date
-    const blogs = await BlogModel.find().sort({ full_date: -1 }).orFail();
+    const blogs = await Blog.find().sort({ full_date: -1 }).orFail();
     // send a response as the blogs as the message
     return blogs;
   } catch (err) {
@@ -18,7 +18,7 @@ async function getBlogs() {
 
 export default async function BlogsPage() {
   const blogs = await getBlogs();  // Fetch the blogs using the getBlogs function
-  console.log(blogs); 
+  // console.log(blogs); 
 
   if (!blogs) {
     return <div>No blogs found</div>;  // Handle the case where no blogs are found

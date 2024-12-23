@@ -1,56 +1,67 @@
-import ProjectModel from '@/database/portfolioSchema';
+'use client'
+import PortfolioModel from '@/database/portfolioSchema';
+import PortfolioPreview from '@/components/portfolioPreview';
 import connectDB from '@/database/db';
-import style from './portfolio.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
+import style from './portfolioPage.module.css';
 import React from "react";
+import CommentSection from "@/components/commentSection"
+import { useEffect, useState } from "react";
 
-async function getProjects() {
+
+async function getPortfolios() {
   await connectDB(); // Function to connect to the DB
 
   try {
-    // Query for all projects (no need to sort by date since you're fetching all)
-    const projects = await ProjectModel.find().orFail(); // orFail will throw if no projects are found
-    return projects;
+    const portfolios = await PortfolioModel.find().orFail(); // orFail will throw if no projects are found
+    return portfolios;
   } catch (err) {
     console.error("Error fetching projects:", err);
     return null; // Return null if no projects are found or an error occurs
   }
 }
 
-export default async function PortfolioPage() {
-  const projects = await getProjects();  // Fetch the projects using the getProjects function
+async function getComments() {
+  // Fetch all comments from the portfolioComment collection
+  try {
+    const response = await fetch('/api/portfolio/comment');
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error('Error fetching comments:', err);
+    return [];
+  }
+}
 
-  if (!projects) {
-    return <div>No projects found</div>;  // Handle the case where no projects are found
+export default async function PortfolioPage() {
+  const [comments, setComments] = useState([]);
+  const portfolios = await getPortfolios();
+  console.log(portfolios); 
+
+  useEffect(() => {
+    const loadData = async () => {
+      const fetchedComments = await getComments();
+
+      setComments(fetchedComments || []); // Fallback to empty array if no comments found
+    };
+
+    loadData();
+  }, []);
+
+  if (portfolios == null) {
+    return <div>No portfolios found</div>; // Handle the case where no portfolios are found
   }
 
   return (
     <div id="project">
       <h1 className="page-title">My Portfolio</h1>
       <div className={style.projectContainer}>
-        {projects.map((project) => (
-            <div key={project._id} className={style.projectDetails}>
-              <div className={style.imageContainer}>
-                <Image 
-                  src={project.image}  // Dynamically use project image
-                  alt={project.imageAlt}  // Dynamically use project imageAlt
-                  width={500}  // Adjusted size for responsiveness
-                  height={300} // Adjusted size for responsiveness
-                  layout="responsive"
-                  className={style.projectImage}
-                />
-              </div>
-            <p className={style.projectName}>{project.name}</p>
-            <p className={style.projectDescription}>{project.description}</p>
-            {project.link && project.link !== "#" ? (
-            <Link href={project.link} target="_blank" className={style.projectLink}>Click Here!</Link>
-          ) : (
-            <span className={style.projectLinkSoon}>Link Coming Soon!</span>
-          )}
+        {portfolios.map((portfolio) => (
+            <div key={portfolio._id} className={style.projectDetails}>
+              <PortfolioPreview {...(portfolio as any)._doc} />  
           </div>
-          
-        ))}
+          ))}
+        <h2 className={style.comments}>Comment Section</h2>
+        <CommentSection collection="portfoliocomments" />
       </div>
     </div>
   );

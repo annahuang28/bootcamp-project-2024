@@ -2,8 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image'; 
 import style from './blogs.module.css';
 import { Blog } from "@/database/blogSchema";
-import Comment from "@/components/comment";
-import { IComment } from "@/database/blogSchema";
+import CommentSection from "@/components/commentSection"
 
 type Props = {
   params: { slug: string }
@@ -27,7 +26,9 @@ async function getBlog(slug: string) {
 }
 
 // Ensure the component is async to handle server-side rendering
-export default async function BlogPostPage({ params: {slug} }: Props) {
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  
   // Fetch blog post data based on the slug
   const blog: Blog = await getBlog(slug);
 
@@ -56,13 +57,9 @@ export default async function BlogPostPage({ params: {slug} }: Props) {
 
           <div className={style.contentContainer}>
             <p>{blog.content}</p>
-            {/* Comments section */}
             <div className={style.blogComments}>
               <h2 className={style.comments}>Comment Section</h2>
-              {blog.comments?.length > 0 ? (
-                blog.comments.map((comment: IComment, idx: number) => (
-                <Comment key={idx} comment={comment} />
-              ))) : (<p>No comments yet.</p> )}
+              <CommentSection collection="blogs" slug={blog.slug} />
             </div>
           </div>
         <Link href="/blogs" className={style.return}>Return to other blogs</Link>

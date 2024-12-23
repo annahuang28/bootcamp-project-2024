@@ -1,15 +1,15 @@
 import mongoose, { Schema } from "mongoose";
 
-export type Project = {
+export type Portfolio = {
     name: string;
     description: string;
     image: string;
     imageAlt: string;
-    link: string; // slug is a URL-friendly name used to redirect to a specific page
+    link: string; 
   };
 
 // mongoose schema
-const projectSchema = new Schema<Project>({
+const portfolioSchema = new Schema<Portfolio>({
     name: { type: String, required: true },
     description: { type: String, required: true },
     image: { type: String, required: true },
@@ -18,7 +18,7 @@ const projectSchema = new Schema<Project>({
 })
 
 // defining the collection and model
-const ProjectModel = mongoose.models['projects'] || 
-    mongoose.model('projects', projectSchema);
+const Portfolio = mongoose.models['portfolios'] || 
+    mongoose.model('portfolios', portfolioSchema);
 
-export default ProjectModel;
+export default Portfolio;
