@@ -20,7 +20,7 @@ export default function BlogPreview({ title, date, description, image, imageAlt,
                 <h3 className={style.blogTitle}>{title}</h3>
                 <p className={style.blogDate}>{date}</p>
                 <p className={style.blogExcerpt}>{description}</p>
-                <Link href={`/Blogs/${slug}`} className={style.blogLink}>
+                <Link href={`/blogs/${slug}`} className={style.blogLink}>
                 Read More
                 </Link>
             </div>

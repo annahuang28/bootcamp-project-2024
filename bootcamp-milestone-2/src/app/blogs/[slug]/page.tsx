@@ -10,7 +10,7 @@ type Props = {
 
 async function getBlog(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/Blogs/${slug}`, {
+    const res = await fetch(`http://localhost:3000/api/blogs/${slug}`, {
       cache: "no-store",  // Disable cache for fresh data
     });
 
@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }: Props) {
       <div className={style.errorMessage}>
         <h1>Blog Not Found</h1>
         <p>Sorry, we couldn't find the blog you're looking for.</p>
-        <Link href="/Blogs" className={style.return}>Return to other blogs</Link>
+        <Link href="/blogs" className={style.return}>Return to other blogs</Link>
       </div>
     );
   }
@@ -59,10 +59,10 @@ export default async function BlogPostPage({ params }: Props) {
             <p>{blog.content}</p>
             <div className={style.blogComments}>
               <h2 className={style.comments}>Comment Section</h2>
-              <CommentSection collection="Blogs" slug={blog.slug} />
+              <CommentSection collection="blogs" slug={blog.slug} />
             </div>
           </div>
-        <Link href="/Blogs" className={style.return}>Return to other blogs</Link>
+        <Link href="/blogs" className={style.return}>Return to other blogs</Link>
       </main>
     </div>
   );
