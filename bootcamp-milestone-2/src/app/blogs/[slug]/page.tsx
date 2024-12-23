@@ -5,7 +5,7 @@ import { Blog } from "@/database/blogSchema";
 import CommentSection from "@/components/commentSection"
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>; // Expecting params to be a Promise
 };
 
 async function getBlog(slug: string) {
