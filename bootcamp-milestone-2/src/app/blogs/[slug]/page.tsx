@@ -9,7 +9,7 @@ type Props = {
 };
 
 async function getBlog(slug: string) {
-  const apiUrl = `https://bootcamp-project-2024-wheat.vercel.app`;
+  const apiUrl = `https://annahuang-bootcamp-project-2024.vercel.app`;
   try {
     const res = await fetch(`${apiUrl}/api/blogs/${slug}`, {
       cache: "no-store",  // Disable cache for fresh data
