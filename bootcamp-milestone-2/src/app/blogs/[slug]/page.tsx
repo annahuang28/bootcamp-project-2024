@@ -9,7 +9,7 @@ type Props = {
 };
 
 async function getBlog(slug: string) {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || `http://localhost:3000`;
+  const apiUrl = `https://bootcamp-project-2024-wheat.vercel.app`;
   try {
     const res = await fetch(`${apiUrl}/api/blogs/${slug}`, {
       cache: "no-store",  // Disable cache for fresh data
